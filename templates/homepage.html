@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Pets</h1>
+
+    {% for pet in pets %}
+        <img src={{pet.photo_url}} alt=""><br>
+        {{pet.name}} <br>
+        <a href="/pet/{{pet.id}}/edit">Edit Pet</a> <br>
+        <a href="/pet/{{pet.id}}">Pet Info</a> <br>
+        {% if pet.available %} <b>is available</b> <br> {%endif%}
+        {%else%}
+        <h2>No Pets Yet</h2>
+    {%endfor%}
+
+
+    <a href="/add">Add a Pet</a>
+
+    
+</body>
+</html>
